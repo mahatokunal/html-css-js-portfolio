@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Kunal Mahato - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
     <nav id="desktop-nav">
-        <div class="logo"> Kunal Mahato</div>
+        <div class="logo">Kunal Mahato</div>
         <div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+            </ul>            
+        </div>
     </nav>
     <nav id="hamburger-nav">
-        <div class="logo"> Kunal Mahato</div>
+        <div class="logo">Kunal Mahato</div>
         <div class="hamburger-menu">
             <div class = "hamburger-icon" onclick="toggleMenu()">
                 <span></span>
@@ -26,28 +29,31 @@
                 <span></span>
             </div>
             <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
             </div>
         </div>
     </nav>
     <section id="profile">
-        <div class="section_pic-container">
-            <img src="./assets/kunal-profile-pic.png" alt="Kunal Mahato profile picture">
-        </div>
-        <div class="section_text">
-            <p class="section_text_p1">Hello, I'm</p>
-            <h1 class="title">Kunal Mahato</h1>
-            <p class="section_text_p2">Software Engineer</p>
-            <div class = "btn_container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">Resume</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+        <div class="profile-content">
+            <div class="section_pic-container">
+                <img src="./assets/profile-pic.png" alt="Kunal Mahato profile picture">
             </div>
-            <div class = "socials-container">
-                <img src="./assets/linkedin.png" alt="My Linkedin profile" class="icon" onclick="location.href='https://www.linkedin.com/in/kunalmahato/'">
-                <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/mahatokunal'">'
+            <div class="section_text">
+                <p class="section_text_p1">Hello, I'm</p>
+                <h1 class="title">Kunal Mahato</h1>
+                <p class="section_text_p2">Software Engineer</p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2">Download CV</button>
+                    <button class="btn btn-color-1">Contact Info</button>
+                </div>
+                <div class="socials-container">
+                    <img src="./assets/linkedin.png" alt="My Linkedin profile" class="icon" onclick="location.href='#'">
+                    <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='#'">
+                </div>
             </div>
         </div>
     </section>
@@ -66,7 +72,7 @@
                 <div class = "about-containers">
                     <div class = "details-container">
                         <img src="./assets/experience.png" 
-                        alt="Experience icon" 
+                        alt="experience icon" 
                         class="icon"
                         >
                         <h3>Experience</h3>
@@ -89,49 +95,191 @@
                 </div>
             </div>
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
+        <div class="arrow-container">
+            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="scrollToSection('experience')">
+        </div>
     </section>
     <section id="experience">
-        <!-- <p class="section_text_p1">Explore My</p> -->
         <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
+        <div class="experience-container">
+            
+            <!-- Turvo Experience -->
+            <div class="education-institute-container">
+                <div class="education-item">
+                    <!-- Company Logo -->
+                    <div class="edu-logo">
+                        <img src="./assets/turvo.svg" alt="Turvo Logo" class="icon">
+                    </div>
+                    <!-- Company Details -->
+                    <div class="edu-details">
+                        <h2>Turvo Inc., India</h2>
+                        <p><img src="./assets/skills/software-engineer.png" alt="Role Icon" class="icon"> <strong>Software Engineer</strong></p>
+                        <p><img src="./assets/calendar.png" alt="Duration Icon" class="icon"> May 2021 - June 2023</p>
+                    </div>
+                </div>
+                <!-- Responsibilities and Achievements -->
+                <div class="edu-summary">
+                    <ul>
+                        <li>Enhanced global search and filter efficiency by 10% through advanced Elasticsearch indexing and REST API implementation, improving data retrieval speed and accuracy for supply-chain operations.</li>
+                        <li>Led the development and integration of a new Intermodal mode, migrating 216k+ shipments via Python scripting, ensuring robust data consistency across MySQL and MongoDB databases.</li>
+                        <li>Managed reorganization of the Rules Framework with a Business Rule Management System, supporting role-specific shipment locks and mode-based status sequences, thus enhancing system reliability for over 10 clients.</li>
+                        <li>Eliminated data vulnerabilities for 5 clients by encrypting credentials and storing them in Hashicorp Vault.</li>
+                        <li>Elevated customer satisfaction and system performance by optimizing 5 shipment features (cloning, routing, sharing, orders, invoicing) through Agile methodologies.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Samsung South Korea Experience -->
+            <div class="education-institute-container">
+                <div class="education-item">
+                    <!-- Company Logo -->
+                    <div class="edu-logo">
+                        <img src="./assets/Samsung.png" alt="Samsung Logo" class="icon">
+                    </div>
+                    <!-- Company Details -->
+                    <div class="edu-details">
+                        <h2>Samsung, South Korea</h2>
+                        <p><img src="./assets/skills/software-engineer.png" alt="Role Icon" class="icon"> <strong>R&D Engineer</strong></p>
+                        <p><img src="./assets/calendar.png" alt="Duration Icon" class="icon"> December 2019</p>
+                    </div>
+                </div>
+                <!-- Responsibilities and Achievements -->
+                <div class="edu-summary">
+                    <ul>
+                        <li>Worked on UI and Notifications which helped launch the world's first foldable phone at Samsung HQ, South Korea.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Samsung India Experience -->
+            <div class="education-institute-container">
+                <div class="education-item">
+                    <!-- Company Logo -->
+                    <div class="edu-logo">
+                        <img src="./assets/Samsung.png" alt="Samsung Logo" class="icon">
+                    </div>
+                    <!-- Company Details -->
+                    <div class="edu-details">
+                        <h2>Samsung, India</h2>
+                        <p><img src="./assets/skills/software-engineer.png" alt="Role Icon" class="icon"> <strong>R&D Engineer</strong></p>
+                        <p><img src="./assets/calendar.png" alt="Duration Icon" class="icon"> June 2018 - April 2021</p>
+                    </div>
+                </div>
+                <!-- Responsibilities and Achievements -->
+                <div class="edu-summary">
+                    <ul>
+                        <li>Maintained and optimized full-stack codebase for both UI components and robust back-end systems, enhancing performance for 1.48+ billion devices.</li>
+                        <li>Improved performance by reducing battery usage and memory consumption by 20%, utilizing Java for back-end and front-end optimizations for low-end devices.</li>
+                        <li>Handled 5 Application and Framework modules - Settings, Calendar, QuickPanel, Status-Bar and warning notifications.</li>
+                        <li>Upgraded the customer satisfaction metrics by 10% through implementation of Search feature for Quick Panel.</li>
+                        <li>Collaborated to develop back-end solutions for data porting, ensuring integration across 20+ network operators.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-container">
+            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="scrollToSection('education')">
+        </div>
+    </section>
+    <section id="education">
+        <h1 class="title">Education</h1>
+        <div class="education-container"> 
+        
+            <!-- Education iteam and and education summary should be in 1 container -->
+
+        <div class="education-institute-container">    
+          <!-- Education Item 1 -->
+          <div class="education-item">
+            <!-- Left section (30% width): Institute Icon -->
+            <div class="edu-logo">
+                <img src="./assets/vt.png" alt="Institute Icon" class="icon">
+            </div>
+            <!-- Right section (70% width): Institute Details -->
+            <div class="edu-details">
+                <h2>Virginia Tech.</h2>
+                <p><img src="./assets/location.png" alt="Location Icon" class="icon"> Alexandria, Virginia, USA</p>
+                <p><img src="./assets/degree.png" alt="Degree Icon" class="icon"> Master Of Engineering</p>
+                <p><img src="./assets/major.svg" alt="Major Icon" class="icon"> Computer Science & Applications</p>
+                <p><img src="./assets/calendar.png" alt="Duration Icon" class="icon"> August 2023 - May 2025</p>
+            </div>
+          </div>
+          <!-- Summary for Education Item 1 -->
+          <div class="edu-summary">
+               <p><strong>GPA:</strong> 3.92 / 4</p>
+               <p><strong>Relevant Courses:</strong> Software Engineering, Machine Learning, Web Application Development, AI tools for Software Delivery, Cloud Computing, Urban Computing, Usability Engineering, Introduction to Artificial Intelligence.</p>
+          </div>
+        </div>
+      
+        <div class="education-institute-container">
+          <!-- Education Item 2 -->
+          <div class="education-item">
+            <!-- Left section (30% width): Institute Icon -->
+            <div class="edu-logo">
+                <img src="./assets/mnnit.png" alt="Institute Icon" class="icon">
+            </div>
+            <!-- Right section (70% width): Institute Details -->
+            <div class="edu-details">
+                <h2>Motilal Nehru National Institute Of Technology Allahabad</h2>
+                <p><img src="./assets/location.png" alt="Location Icon" class="icon"> Prayagraj, UP, India</p>
+                <p><img src="./assets/degree.png" alt="Degree Icon" class="icon"> Bachelor Of Technology</p>
+                <p><img src="./assets/major.svg" alt="Major Icon" class="icon"> Computer Science & Engineering</p>
+                <p><img src="./assets/calendar.png" alt="Duration Icon" class="icon"> July 2014 - May 2018</p>
+            </div>
+          </div>
+          <!-- Summary for Education Item 2 -->
+          <div class="edu-summary">
+               <p><strong>GPA:</strong> 3.53 / 4</p>
+               <p><strong>Relevant Courses:</strong> Data Structures, Analysis of Algorithms, Database Management System, Distributed Systems, Operating Systems, Computer Networks, Cryptography, Object Oriented Modeling.</p>
+          </div> 
+        </div>
+
+        </div>
+        
+        <div class="arrow-container">
+            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="scrollToSection('skills')">
+        </div>
+      </section>      
+    <section id="skills">
+        <!-- <p class="section_text_p1">Explore My</p> -->
+        <h1 class="title">Skills</h1>
+        <div class="skills-details-container">
             <div class="about-containers">
                 
                 <div class="details-container">
-                    <h2 class="experience-sub-title">Programming & DBs</h2>
+                    <h2 class="skills-sub-title">Programming & DBs</h2>
                     <div class="article-container">
                         <article>
-                            <img src="./assets/skills/java.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/java.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>JAVA</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/python.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/python.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Python</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/c++.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/c++.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>C++</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/postgresql.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/postgresql.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>PostgreSQL</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/mongo-db.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/mongo-db.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>MongoDB</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/mysql.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/mysql.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>MySQL</h3>
                             </div>
@@ -140,40 +288,40 @@
                 </div>
                 
                 <div class="details-container">
-                    <h2 class="experience-sub-title">Frontend & Web Dev.</h2>
+                    <h2 class="skills-sub-title">Frontend & Web Dev.</h2>
                     <div class="article-container">
                         <article>
-                            <img src="./assets/skills/react.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/react.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>React</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/typescript.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/typescript.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>TypeScript</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/javascript.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/javascript.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>JavaScript</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/html-5.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/html-5.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>HTML/CSS</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/streamlit.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/streamlit.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Streamlit</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/redux.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/redux.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Redux</h3>
                             </div>
@@ -182,40 +330,40 @@
                 </div>
 
                 <div class="details-container">
-                    <h2 class="experience-sub-title">Backend & API</h2>
+                    <h2 class="skills-sub-title">Backend & API</h2>
                     <div class="article-container">
                         <article>
-                            <img src="./assets/skills/spring-boot.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/spring-boot.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Spring</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/nodejs.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/nodejs.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Node.js</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/Express.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/Express.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Express</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/FastAPI.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/FastAPI.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>FastAPI</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/rest-api.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/rest-api.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>RESTful APIs</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/microservices.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/microservices.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Microservices</h3>
                             </div>
@@ -224,40 +372,40 @@
                 </div>
 
                 <div class="details-container">
-                    <h2 class="experience-sub-title">AI & Machine Learning</h2>
+                    <h2 class="skills-sub-title">AI & Machine Learning</h2>
                     <div class="article-container">
                         <article>
-                            <img src="./assets/skills/openai.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/openai.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>OpenAI</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/appliedAI.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/appliedAI.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>AppliedAI</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/llm.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/llm.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>LLMs (RAG)</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/tensorflow.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/tensorflow.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>TensorFlow</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/scikit-learn.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/scikit-learn.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Scikit-learn</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/pytorch.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/pytorch.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>PyTorch</h3>
                             </div>
@@ -266,40 +414,40 @@
                 </div>
 
                 <div class="details-container">
-                    <h2 class="experience-sub-title">Cloud & DevOps</h2>
+                    <h2 class="skills-sub-title">Cloud & DevOps</h2>
                     <div class="article-container">
                         <article>
-                            <img src="./assets/skills/aws.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/aws.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>AWS</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/docker.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/docker.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Docker</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/ci-cd.svg" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/ci-cd.svg" alt="Skills icon" class="icon">
                             <div>
                                 <h3>CI/CD</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/elastic.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/elastic.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>ElasticSearch</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/HashiCorp Vault.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/HashiCorp Vault.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>HashiCorp Vault</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/cli-aws.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/cli-aws.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>AWS CLI</h3>
                             </div>
@@ -308,34 +456,34 @@
                 </div>  
                 
                 <div class="details-container">
-                    <h2 class="experience-sub-title">Tools & Platforms</h2>
+                    <h2 class="skills-sub-title">Tools & Platforms</h2>
                     <div class="article-container">
                         <article>
-                            <img src="./assets/skills/git.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/git.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Git</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/jira.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/jira.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>JIRA</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/intellij.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/intellij.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>IntelliJ</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/kibana.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/kibana.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>Kibana</h3>
                             </div>
                         </article>
                         <article>
-                            <img src="./assets/skills/UNIX.png" alt="Experience icon" class="icon">
+                            <img src="./assets/skills/UNIX.png" alt="Skills icon" class="icon">
                             <div>
                                 <h3>UNIX</h3>
                             </div>
@@ -345,49 +493,227 @@
 
             </div>
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'">
+        <div class="arrow-container">
+            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="scrollToSection('projects')">
+        </div>
     </section>
     <section id="projects">
-        <p class="section_text_p1">Browse My Recent</p>
         <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-        <div class="about-containers">
-           <div class="details-container color-container">
-                <div class = "article-container">
-                    <img src="./assets/project-1.png" alt="Project 1" class="project-img">
+        <div class="projects-container">
+            <!-- Project 1: Ask Hokie -->
+            <div class="project-card">
+                <div class="project-top-row">
+                    <div class="project-image">
+                        <img src="./assets/project-1.png" alt="Ask Hokie" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2 class="project-title">Ask Hokie</h2>
+                            <p class="project-date"><img src="./assets/calendar.png" alt="Date Icon" class="icon"> September 2024</p>
+                            <p class="project-location"><img src="./assets/location.png" alt="Location Icon" class="icon"> VTHacks-Hackathon</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">GPT-4</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">PropelAuth</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/mahatokunal'">
+                                GitHub
+                            </button>
+                            <button class="btn btn-color-1 project-btn" onclick="window.alert('Demo coming soon!')">
+                                Demo
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <h2 class = "experience-sub-title-project-title">Project One</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">
-                        Github
-                    </button>
+                <div class="project-description">
+                    <p>Built a real-time chatbot using GPT-4-Turbo and React answering over 1,000 student queries with a 95% accuracy rate. Integrated MongoDB and PropelAuth with FastAPI, enabling secure, efficient access to diverse university resources.</p>
                 </div>
-           </div>
-           <div class="details-container color-container">
-            <div class = "article-container">
-                <img src="./assets/project-2.png" alt="Project 2" class="project-img">
             </div>
-            <h2 class = "experience-sub-title-project-title">Project Two</h2>
-            <div class="btn-container">
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">
-                    Github
-                </button>
-            </div>
-            </div>
-            <div class="details-container color-container">
-                <div class = "article-container">
-                    <img src="./assets/project-3.png" alt="Project 3" class="project-img">
+
+            <!-- Project 2: Book Wonders -->
+            <div class="project-card">
+                <div class="project-top-row">
+                    <div class="project-image">
+                        <img src="./assets/project-2.png" alt="Book Wonders" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2 class="project-title">Book Wonders</h2>
+                            <p class="project-date"><img src="./assets/calendar.png" alt="Date Icon" class="icon"> January 2024 - May 2024</p>
+                            <p class="project-location"><img src="./assets/location.png" alt="Location Icon" class="icon"> Virginia Tech</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Redux</span>
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">AWS</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/mahatokunal'">
+                                GitHub
+                            </button>
+                            <button class="btn btn-color-1 project-btn" onclick="window.alert('Demo coming soon!')">
+                                Demo
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <h2 class = "experience-sub-title-project-title">Project Three</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com'">
-                        Github
-                    </button>
+                <div class="project-description">
+                    <!-- <p>Developed a scalable e-commerce app with login, book browsing, cart, and checkout, supporting 1000+ transactions. Designed responsive pages using React with Context API and Redux, improving load and data flow by up to 30%. Constructed 15+ RESTful APIs in Java with MySQL integration.</p> -->
+                    <ul>
+                        <li>Developed a scalable e-commerce app with login, book browsing, cart, and checkout, supporting 1000+ transactions.</li>
+                        <li>Designed responsive pages using React with Context API and Redux, improving load and data flow by up to 30%.</li>
+                        <li>Constructed 15+ RESTful APIs in Java with MySQL integration.</li>
+                        <li>Deployed on AWS, ensuring high availability and performance.</li>
+                        <li>Implemented JWT authentication for secure user sessions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 3: DoDEx -->
+            <div class="project-card">
+                <div class="project-top-row">
+                    <div class="project-image">
+                        <img src="./assets/project-3.png" alt="DoDEx" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2 class="project-title">DoDEx: Winner for People's Choice Hack</h2>
+                            <p class="project-date"><img src="./assets/calendar.png" alt="Date Icon" class="icon"> April 2024</p>
+                            <p class="project-location"><img src="./assets/location.png" alt="Location Icon" class="icon"> Bitcamp-Hackathon</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">LLM</span>
+                            <span class="tech-badge">RAG</span>
+                            <span class="tech-badge">Elasticsearch</span>
+                            <span class="tech-badge">AI</span>
+                            <span class="tech-badge">Web Scraping</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/mahatokunal'">
+                                GitHub
+                            </button>
+                            <button class="btn btn-color-1 project-btn" onclick="window.alert('Demo coming soon!')">
+                                Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p>Engineered an AI-driven parser with LLM and RAG, gaining 30% validation accuracy improvement on Defense Contract Notices. Leveraged web scraping and Elasticsearch for reliable indexing and querying, enabling categorization of contract details.</p>
+                </div>
+            </div>
+
+            <!-- Project 4: Review Me -->
+            <div class="project-card">
+                <div class="project-top-row">
+                    <div class="project-image">
+                        <img src="./assets/project-1.png" alt="Review Me" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2 class="project-title">Review Me</h2>
+                            <p class="project-date"><img src="./assets/calendar.png" alt="Date Icon" class="icon"> August 2023 - December 2023</p>
+                            <p class="project-location"><img src="./assets/location.png" alt="Location Icon" class="icon"> Virginia Tech</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">MERN</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Express</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">JWT</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/mahatokunal'">
+                                GitHub
+                            </button>
+                            <button class="btn btn-color-1 project-btn" onclick="window.alert('Demo coming soon!')">
+                                Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p>Created a MERN-based peer review platform with MVC architecture, fostering collaboration and community building. Enabled hashtag search, notifications, upvote/downvote, and comments. Attained 95% test coverage with Mocha and Chai for reliable code quality.</p>
+                </div>
+            </div>
+            
+            <!-- Project 5: Smart Home Assistant -->
+            <div class="project-card">
+                <div class="project-top-row">
+                    <div class="project-image">
+                        <img src="./assets/project-2.png" alt="Smart Home Assistant" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2 class="project-title">Smart Home Assistant</h2>
+                            <p class="project-date"><img src="./assets/calendar.png" alt="Date Icon" class="icon"> October 2022 - January 2023</p>
+                            <p class="project-location"><img src="./assets/location.png" alt="Location Icon" class="icon"> Personal Project</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">IoT</span>
+                            <span class="tech-badge">Raspberry Pi</span>
+                            <span class="tech-badge">TensorFlow Lite</span>
+                            <span class="tech-badge">REST API</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/mahatokunal'">
+                                GitHub
+                            </button>
+                            <button class="btn btn-color-1 project-btn" onclick="window.alert('Demo coming soon!')">
+                                Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p>Developed a custom smart home system using Raspberry Pi that integrates with various IoT devices and sensors. Implemented voice recognition with TensorFlow Lite for hands-free control and created a mobile app dashboard for remote monitoring. Reduced energy consumption by 15% through automated scheduling and intelligent device management.</p>
+                </div>
+            </div>
+            
+            <!-- Project 6: Supply Chain Analytics Dashboard -->
+            <div class="project-card">
+                <div class="project-top-row">
+                    <div class="project-image">
+                        <img src="./assets/project-3.png" alt="Supply Chain Analytics" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h2 class="project-title">Supply Chain Analytics Dashboard</h2>
+                            <p class="project-date"><img src="./assets/calendar.png" alt="Date Icon" class="icon"> March 2021 - August 2021</p>
+                            <p class="project-location"><img src="./assets/location.png" alt="Location Icon" class="icon"> Turvo Inc.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">D3.js</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Elastic Stack</span>
+                        </div>
+                        <div class="project-buttons">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/mahatokunal'">
+                                GitHub
+                            </button>
+                            <button class="btn btn-color-1 project-btn" onclick="window.alert('Demo coming soon!')">
+                                Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p>Built an interactive analytics dashboard for visualizing complex supply chain data, reducing decision-making time by 40%. Created custom D3.js visualizations for shipment tracking, inventory management, and predictive analytics. Implemented real-time data processing with Elastic Stack, handling over 50,000 daily shipment events with sub-second response times.</p>
                 </div>
             </div>
         </div>
+        <div class="arrow-container">
+            <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="scrollToSection('profile')">
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'">
     </section>
     <script src="script.js"></script> 
 </body>

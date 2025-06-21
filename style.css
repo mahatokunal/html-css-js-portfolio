@@ -9,6 +9,7 @@
 
 body{
     font-family: "Poppins", sans-serif;
+    line-height: 1.6;
 }
 
 html{
@@ -17,6 +18,7 @@ html{
 
 p {
     color: rgb(85, 85, 85);
+    margin-bottom: 1rem;
 } 
 
 /* TRANSITON */
@@ -34,7 +36,7 @@ nav, .nav-links {
 nav {
     justify-content: space-around;
     align-items: center;
-    height: 17vh;
+    height: 12vh; /* Reduced height to provide more space for profile section */
 }
 
 .nav-links {
@@ -147,15 +149,21 @@ a:hover {
 /* SECTIONS */
 
 section {
-    padding-top: 4vh;
-    height: 96vh;
-    margin: 0 10rem;
+    padding-top: 2.5vh;
+    padding-bottom: 2vh;
+    height: auto;
+    margin: 0 5rem;
     box-sizing: border-box;
-    min-height: fit-content;
+    min-height: 100vh; /* Ensure each section takes at least full viewport height */
+    position: relative; /* Ensure proper positioning context for the arrow */
+    display: flex;
+    flex-direction: column;
 }
 
 .section-container {
     display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 /* PROFILE SECTION */
@@ -163,8 +171,20 @@ section {
 #profile {
     display: flex;
     justify-content: center;
+    align-items: center; /* Center vertically */
     gap: 5rem;
-    height: 80vh;
+    min-height: 100vh;
+    padding-top: 0; /* Remove top padding */
+    padding-bottom: 0; /* Remove bottom padding */
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section_pic-container {
@@ -172,11 +192,12 @@ section {
     height: 400px;
     width: 400px;
     margin: auto 0;
+    flex-shrink: 0;
 }
 
 .section_text {
     align-self: center;
-    text-align: center;
+    text-align: left;
 }
 
 .section_text p {
@@ -184,7 +205,14 @@ section {
 }
 
 .section_text_p1 {
-    text-align: center;
+    text-align: left;
+    margin-bottom: 0.25rem; /* Reduced margin to bring it closer to title */
+}
+
+@media screen and (max-width: 600px) {
+    .section_text_p1 {
+        text-align: center;
+    }
 }
 
 .section_text_p2 {
@@ -193,15 +221,23 @@ section {
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 0.75rem;
+    margin-top: 0.25rem; /* Reduced margin to bring it closer to the text above */
 }
 
-#socials-container {
+.socials-container {
     display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
     gap: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .socials-container {
+        justify-content: center;
+    }
 }
 
 /* ICONS */
@@ -209,24 +245,24 @@ section {
 .icon {
     cursor: pointer;
     height: 2rem;
-    margin: 0.5rem;
 }
 
 /* BUTTONS */
 
 .btn-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Align to the left to match the text */
     gap: 1rem;
+    margin-top: 0.75rem;
 }
 
 .btn {
     font-weight: 600;
     transition: all 300ms ease;
-    padding: 1rem;
+    padding: 0.8rem 1.2rem;
     margin: 0.5rem;
-    margin-bottom: 2rem;
-    width: 8rem;
+    margin-bottom: 1.5rem;
+    width: 7rem;
     border-radius: 2rem;
 }
 
@@ -268,87 +304,136 @@ section {
     position: relative;
 }
 
+#about .section_text_p1 {
+    margin-bottom: 0.1rem; /* Very small margin in the About section */
+    text-align: center; /* Center align the "Get to Know More" text */
+}
+
+#about .title {
+    margin-top: 0; /* Remove top margin for the About Me title */
+}
+
 .about-containers{
     gap: 2rem;
     margin-bottom: 2rem;
-    margin-top: 2rem; 
+    margin-top: 1.5rem;
+    width: 100%;
 }
 
 .about-details-container {
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
 }
 
 .about-containers, .about-details-container{
     display: flex;
+}
 
+#about .text-container {
+    margin-top: 1rem;
 }
 
 .about-pic {
     border-radius: 2rem;
 }
 
+.arrow-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto; /* Push to bottom of flex container */
+    padding: 1.5rem 2rem 1.5rem 0;
+    width: 100%;
+    position: relative;
+}
+
 .arrow {
-    position: absolute;
-    right: -5rem;
-    bottom: 2.5rem;
+    height: 2.5rem;
+    width: auto;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 50%; /* Circular background */
+    padding: 0.5rem; /* Add some padding around the arrow */
+    z-index: 10; /* Ensure arrow appears above other content */
+}
+
+.arrow:hover {
+    transform: scale(1.2);
 }
 
 .details-container {
-    padding: 0.5rem;
+    padding: 1rem;
     flex: 1;
     background: white;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
     text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .section-container {
     gap: 4rem;
-    height: 80%;
+    height: auto;
+    align-items: flex-start;
 }
 
 .section_pic-container {
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
     margin: auto 0;
+    flex: 0 0 auto;
 }
 
-/* EXPERIENCE SECTION */
+#about .section_pic-container {
+    flex: 0 0 300px;
+    max-width: 300px;
+}
 
-#experience {
+#about .about-details-container {
+    flex: 1;
+    min-width: 0;
+}
+
+/* SKILLS SECTION */
+
+#skills {
     position: relative;
 }
 
-#experience article {
+#skills article {
     flex-direction: column;
     align-items: center;
 }
 
-#experience .about-containers {
+#skills .about-containers {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 0rem;
+    gap: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Display 2 articles in 1 row for Experience section */
-#experience .article-container {
+/* Display 2 articles in 1 row for Skills section */
+#skills .article-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 0.75rem;
     justify-content: center;
+    margin-top: 1rem;
 }
 
-.experience-sub-title {
+.skills-sub-title {
     color: rgb(85, 85, 85);
     font-weight: 600;
-    font-size: 1.75rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-top: 0.25rem;
 }
 
-.experience-details-container {
+.skills-details-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -375,29 +460,306 @@ article .icon {
     cursor: default;
 }
 
+/* EXPERIENCE SECTION */
+
+#experience {
+    position: relative;
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.experience-company-container {
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 1.5rem;
+    padding: 0.9rem;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.experience-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+/* Company logo styles similar to edu-logo */
+.company-logo {
+    flex: 0 0 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem;
+}
+
+.company-logo img {
+    height: 4.5rem;
+    width: auto;
+    object-fit: contain;
+}
+
+.company-details {
+    flex: 1;
+}
+
+.company-details h2 {
+    margin-bottom: 0.3rem;
+    font-size: 1.6rem;
+}
+
+.company-details p {
+    margin: 0.15rem 0;
+}
+
+.company-details .icon {
+    margin: 0 0.3rem 0 0;
+    vertical-align: middle;
+}
+
+.exp-responsibilities ul {
+    margin-left: 1.5rem;
+    color: rgb(85, 85, 85);
+    margin-top: 0.4rem;
+}
+
+.exp-responsibilities li {
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+    padding-right: 0.5rem;
+}
+
+/* EDUCATION SECTION */
+
+#education {
+    position: relative;
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.education-institute-container {
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 1.25rem;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    padding: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.education-institute-container:hover {
+    transform: translateY(-3px);
+}
+
+.education-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Set fixed ratios for the logo and details */
+.edu-logo {
+    flex: 0 0 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem;
+}
+
+/* Make the image fill its container while preserving aspect ratio */
+.edu-logo img {
+    height: 7rem;
+    width: auto;
+    object-fit: contain;
+}
+
+.edu-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.edu-details p {
+    margin: 0;
+    padding: 0.1rem 0;
+}
+
+.edu-details h2 {
+    margin-bottom: 0.3rem;
+    font-size: 1.5rem;
+}
+
+.edu-details p .icon {
+    height: 1.4rem;
+    margin: 0 0.3rem 0 0;
+    vertical-align: middle;
+}
+
+.edu-summary {
+    border-top: 1px solid rgba(163, 163, 163, 0.3);
+    padding-top: 0.6rem;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 0.3rem;
+    width: 100%;
+    clear: both;
+}
+
+.edu-summary p {
+    margin-bottom: 0.3rem;
+}
+
+.edu-summary p:last-child {
+    margin-bottom: 0;
+}
+
+/* Align icons within paragraphs to be vertically centered with the text */
+p .icon {
+    vertical-align: middle;
+}
+
+
 /* PROJECTS SECTION */
 
 #projects {
     position: relative;
 }
 
-.color-container {
-    border-color: rgb(163, 163, 163);
-    background: rgb(250, 250, 250);
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 0.5rem 0 0 0;
 }
 
-.project-img{
-    border-radius: 2rem;
-    width: 90%;
-    height: 90%;
+@media (min-width: 1200px) {
+    .projects-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background: rgb(250, 250, 250);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    padding: 0.5rem;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-top-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+@media (min-width: 992px) {
+    .project-top-row {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+}
+
+.project-image {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem;
+}
+
+.project-image img {
+    border-radius: 0.75rem;
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+}
+
+.project-content {
+    flex: 1;
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.project-description {
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.25rem;
+    width: 100%;
+}
+
+.project-header {
+    margin-bottom: 0.3rem;
 }
 
 .project-title {
-    margin: 1rem;
-    color: black;
+    font-size: 1.6rem;
+    margin-bottom: 0.2rem;
+    color: rgb(53, 53, 53);
 }
 
-.project-btn{
+.project-date, .project-location {
+    font-size: 1rem;
+    color: rgb(85, 85, 85);
+    margin: 0.05rem 0;
+}
+
+.project-date .icon, .project-location .icon {
+    height: 1.3rem;
+    margin: 0 0.3rem 0 0;
+    vertical-align: middle;
+}
+
+.project-description p {
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.tech-badge {
+    background-color: rgb(53, 53, 53);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.1rem;
+}
+
+.project-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
     color: black;
     border-color: rgb(163, 163, 163);
+    height: auto;
 }

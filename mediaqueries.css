@@ -1,8 +1,310 @@
+/* 13-14 inch MacBook optimization (roughly 1280-1440px) */
+@media screen and (max-width: 1440px) {
+    #experience, #projects, #education, #skills, #about {
+        height: auto;
+        padding-bottom: 3vh;
+    }
+    
+    section {
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        margin: 0 3rem;
+        min-height: 100vh; /* Maintain full-height sections */
+    }
+    
+    #profile {
+        min-height: 100vh;
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .section_pic-container {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .arrow-container {
+        padding: 1rem 2rem 1rem 0;
+    }
+}
+
 @media screen and (max-width: 1200px) { 
     #desktop-nav {
         display: none;
     }
     #hamburger-nav {
         display: flex;
+    }
+    
+    .experience-company-container {
+        padding: 1.25rem;
+    }
+    
+    .company-details h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    section {
+        margin: 0 2.5rem;
+    }
+    
+    .project-card {
+        flex-direction: column;
+    }
+    
+    .project-image {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .project-content {
+        padding: 1.25rem;
+    }
+    
+    .about-containers {
+        gap: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .details-container {
+        padding: 0.75rem;
+    }
+    
+    nav {
+        height: 12vh;
+    }
+    
+    .title {
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    #skills .about-containers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .profile-content {
+        gap: 2rem;
+    }
+    
+    .tech-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .project-title {
+        font-size: 1.25rem;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .skills-sub-title {
+        font-size: 1.25rem;
+    }
+    
+    section {
+        margin: 0 1.5rem;
+    }
+    
+    #skills .about-containers {
+        gap: 1rem;
+    }
+    
+    .experience-company-container,
+    .project-card {
+        border-radius: 1rem;
+    }
+    
+    .project-image {
+        padding: 0.75rem;
+    }
+    
+    .project-img {
+        max-height: 200px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section {
+        margin: 0 1rem;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+    }
+    
+    #profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .profile-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .section_text {
+        text-align: center;
+    }
+    
+    #about .section_text_p1 {
+        margin-bottom: 0.05rem;
+    }
+    
+    #experience, #projects, #education, #skills, #about {
+        margin: 0;
+    }
+    
+    .title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        margin-top: 0.25rem;
+    }
+    
+    nav {
+        height: 10vh;
+    }
+    
+    .experience-company-container {
+        padding: 0.8rem;
+    }
+    
+    .project-card {
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+    
+    .project-top-row {
+        flex-direction: column;
+    }
+    
+    .project-image {
+        padding: 0.5rem;
+    }
+    
+    .project-content {
+        padding: 0.5rem;
+        gap: 0.3rem;
+    }
+    
+    .project-description {
+        padding: 0.3rem 0.5rem;
+    }
+    
+    .project-description {
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+    
+    .project-header {
+        margin-bottom: 0.4rem;
+    }
+    
+    .exp-responsibilities ul {
+        margin-left: 1rem;
+        margin-top: 0.3rem;
+    }
+    
+    .exp-responsibilities li {
+        margin-bottom: 0.2rem;
+        padding-right: 0.25rem;
+        line-height: 1.3;
+    }
+    
+    .company-details h2 {
+        font-size: 1.25rem;
+    }
+    
+    .project-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .project-tech {
+        justify-content: center;
+        gap: 0.25rem;
+    }
+    
+    .education-institute-container {
+        padding: 1rem;
+    }
+    
+    .education-item, .experience-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .edu-logo, .company-logo {
+        padding: 0.25rem;
+    }
+    
+    .edu-logo img, .company-logo img {
+        height: 5rem;
+    }
+    
+    .edu-details p .icon {
+        height: 1.5rem;
+        margin: 0 0.3rem 0 0;
+    }
+    
+    .edu-summary {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .btn {
+        padding: 0.6rem 1rem;
+        margin-bottom: 1rem;
+        width: 6rem;
+        font-size: 0.85rem;
+    }
+    
+    p {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    #skills .about-containers {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .details-container {
+        padding: 0.75rem;
+    }
+    
+    article {
+        width: auto;
+    }
+    
+    .arrow-container {
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem 0.75rem 0;
+    }
+    
+    .arrow {
+        height: 2rem;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        font-size: 1.25rem;
     }
 }
