@@ -76,6 +76,13 @@
     
     nav {
         height: 12vh;
+        position: fixed; /* Keep navigation fixed on tablets */
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     
     .title {
@@ -171,6 +178,10 @@
 }
 
 @media screen and (max-width: 600px) {
+    body {
+        padding-top: 10vh; /* Adjust padding for smaller fixed nav height */
+    }
+    
     section {
         margin: 0 1rem;
         padding-top: 3vh;
@@ -265,6 +276,13 @@
     nav {
         height: 10vh;
         padding: 0 1rem;
+        position: fixed; /* Keep navigation fixed on mobile */
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     
     .hamburger-menu {

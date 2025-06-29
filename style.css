@@ -10,6 +10,7 @@
 body{
     font-family: "Poppins", sans-serif;
     line-height: 1.6;
+    padding-top: 12vh; /* Add padding to account for fixed nav */
 }
 
 html{
@@ -37,6 +38,13 @@ nav {
     justify-content: space-around;
     align-items: center;
     height: 12vh; /* Reduced height to provide more space for profile section */
+    position: fixed; /* Make navigation fixed */
+    top: 0; /* Position at top */
+    left: 0;
+    right: 0;
+    background: white; /* Add background color */
+    z-index: 1000; /* Ensure it stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
 .nav-links {
@@ -62,8 +70,22 @@ a:hover {
     font-size: 2rem;
 }
 
+.logo a {
+    color: black;
+    text-decoration: none;
+    font-size: inherit;
+}
+
+.logo a:hover {
+    color: grey;
+    text-decoration: underline; /* Add underline like other nav links */
+    text-underline-offset: 1rem; /* Match the offset of other nav links */
+    text-decoration-color: rgb(181, 181, 181); /* Match the underline color */
+    cursor: pointer;
+}
+
 .logo:hover {
-    cursor: default;
+    cursor: pointer; /* Change from default to pointer since it's now clickable */
 }
 
 /* HAMBURGER MENU */
@@ -179,19 +201,9 @@ section {
     position: relative; /* For absolute positioning of arrow */
 }
 
-/* Profile section arrow - position fixed to bottom right of viewport when profile is visible */
+/* Profile section arrow - hidden along with all other arrows */
 #profile .arrow-container {
-    position: fixed !important;
-    bottom: 2rem;
-    right: 2rem;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    z-index: 1000;
-    display: none; /* Initially hidden - JavaScript will show when profile is visible */
-    justify-content: center !important;
-    align-items: center !important;
+    display: none !important; /* Hide profile arrow */
 }
 
 .profile-content {
@@ -384,7 +396,7 @@ a.btn:hover {
 }
 
 .arrow-container {
-    display: flex;
+    display: none; /* Hide all arrow containers */
     justify-content: flex-end;
     margin-top: auto; /* Push to bottom of flex container */
     padding: 1.5rem 2rem 1.5rem 0;
