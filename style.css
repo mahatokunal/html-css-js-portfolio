@@ -176,6 +176,22 @@ section {
     min-height: 100vh;
     padding-top: 0; /* Remove top padding */
     padding-bottom: 0; /* Remove bottom padding */
+    position: relative; /* For absolute positioning of arrow */
+}
+
+/* Profile section arrow - position fixed to bottom right of viewport when profile is visible */
+#profile .arrow-container {
+    position: fixed !important;
+    bottom: 2rem;
+    right: 2rem;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    z-index: 1000;
+    display: none; /* Initially hidden - JavaScript will show when profile is visible */
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .profile-content {
@@ -227,9 +243,14 @@ section {
     margin-top: 0.25rem; /* Reduced margin to bring it closer to the text above */
 }
 
+/* Profile section title should be left-aligned */
+#profile .title {
+    text-align: left;
+}
+
 .socials-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     margin-top: 1.5rem;
     gap: 1rem;
 }
@@ -264,6 +285,18 @@ section {
     margin-bottom: 1.5rem;
     width: 7rem;
     border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-icon {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.2rem;
 }
 
 .btn-color-1,
@@ -292,6 +325,17 @@ section {
 
 .btn-color-2:hover {
     border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-color-2:hover .btn-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Override default anchor hover behavior for buttons */
+a.btn:hover {
+    text-decoration: none;
+    text-underline-offset: initial;
+    text-decoration-color: initial;
 }
 
 .btn-container {
@@ -372,6 +416,29 @@ section {
     border-color: rgb(163, 163, 163);
     text-align: center;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 300ms ease;
+}
+
+/* About section details containers - clickable with hover effects */
+#about .details-container {
+    cursor: pointer;
+}
+
+#about .details-container:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+    border-color: rgb(53, 53, 53);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#about .details-container:hover h3,
+#about .details-container:hover p {
+    color: white;
+}
+
+#about .details-container:hover .icon {
+    filter: brightness(0) invert(1);
 }
 
 .section-container {
@@ -523,14 +590,16 @@ article .icon {
 
 .exp-responsibilities ul {
     margin-left: 1.5rem;
-    color: rgb(85, 85, 85);
-    margin-top: 0.4rem;
+    padding-left: 0;
+    list-style-position: inside;
+    list-style-type: disc;
 }
 
 .exp-responsibilities li {
-    margin-bottom: 0.2rem;
-    line-height: 1.4;
-    padding-right: 0.5rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    text-indent: -1rem;
+    padding-left: 1rem;
 }
 
 /* EDUCATION SECTION */
@@ -759,7 +828,64 @@ p .icon {
 .project-btn {
     padding: 0.4rem 0.9rem;
     font-size: 0.9rem;
-    color: black;
-    border-color: rgb(163, 163, 163);
     height: auto;
+}
+
+/* Demo button styling to match home page btn-color-1 */
+.project-btn.btn-color-1 {
+    background: rgb(53, 53, 53);
+    color: white;
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.project-btn.btn-color-1:hover {
+    background: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+
+/* GitHub button styling to match home page btn-color-2 */
+.project-btn.btn-color-2 {
+    background: none;
+    color: rgb(53, 53, 53);
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.project-btn.btn-color-2:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+    border: rgb(255, 255, 255) 0.1rem solid;
+    cursor: pointer;
+}
+
+/* Fix for bullet points positioning inside containers */
+.project-description ul,
+.edu-summary ul {
+    margin-left: 1.5rem;
+    padding-left: 0;
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+.project-description li,
+.edu-summary li {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    text-indent: -1rem;
+    padding-left: 1rem;
+}
+
+/* Ensure experience section lists also have proper bullet positioning */
+.exp-responsibilities ul {
+    margin-left: 1.5rem;
+    padding-left: 0;
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+.exp-responsibilities li {
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    text-indent: -1rem;
+    padding-left: 1rem;
 }
