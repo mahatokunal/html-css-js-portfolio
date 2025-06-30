@@ -8,7 +8,13 @@ function toggleMenu() {
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+    const navHeight = document.querySelector('nav').offsetHeight;
+    const sectionTop = section.offsetTop - navHeight - 20; // Extra 20px for breathing room
+    
+    window.scrollTo({
+      top: sectionTop,
+      behavior: 'smooth'
+    });
   }
 }
 

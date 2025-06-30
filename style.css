@@ -15,6 +15,7 @@ body{
 
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 14vh; /* Add padding to account for fixed nav + extra space */
 }
 
 p {
